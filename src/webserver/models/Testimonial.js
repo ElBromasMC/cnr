@@ -7,7 +7,7 @@ export const Testimonial = db.define('testimonial', {
         allowNull: true,
     },
     rating: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.SMALLINT,
         validate: { min: 1, max: 5 },
         allowNull: false,
     },

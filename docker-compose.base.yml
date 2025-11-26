@@ -1,0 +1,18 @@
+services:
+  webserver:
+    environment:
+      - POSTGRESQL_URL=${POSTGRESQL_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ENABLE_SMTP=${ENABLE_SMTP}
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - MAIL_TO=${MAIL_TO}
+      - NODE_ENV=${NODE_ENV}
+      - RUN_SEEDERS=false
+      - PORT=8080
+      - VITE_BACKEND_URL=${VITE_BACKEND_URL}
+

@@ -42,8 +42,8 @@ const getTestimonials = async (req, res) => {
                 model: Menu,
                 where: {
                     [Sequelize.Op.and]: [
-                        Sequelize.where(Sequelize.fn('MONTH', Sequelize.col('date')), month),
-                        Sequelize.where(Sequelize.fn('YEAR', Sequelize.col('date')), year),
+                        Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('MONTH FROM "menu"."date"')), month),
+                        Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('YEAR FROM "menu"."date"')), year),
                     ],
                     organizationId,
                 },
@@ -71,8 +71,8 @@ const getTestimonial = async (req, res) => {
                         model: Menu,
                         where: {
                             [Sequelize.Op.and]: [
-                                Sequelize.where(Sequelize.fn('MONTH', Sequelize.col('date')), month),
-                                Sequelize.where(Sequelize.fn('YEAR', Sequelize.col('date')), year),
+                                Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('MONTH FROM "menu"."date"')), month),
+                                Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('YEAR FROM "menu"."date"')), year),
                             ],
                             organizationId,
                             mealId
@@ -108,8 +108,8 @@ const getTestimonial0 = async (req, res) => {
                 model: Menu,
                 where: {
                     [Sequelize.Op.and]: [
-                        Sequelize.where(Sequelize.fn('MONTH', Sequelize.col('date')), month),
-                        Sequelize.where(Sequelize.fn('YEAR', Sequelize.col('date')), year),
+                        Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('MONTH FROM "menu"."date"')), month),
+                        Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('YEAR FROM "menu"."date"')), year),
                     ],
                     organizationId,
                     mealId,

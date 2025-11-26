@@ -1,10 +1,4 @@
-# Frontend
-frontend/node_modules
-frontend/dist
-frontend/.env
-
-# Webserver
-webserver/node_modules
-webserver/.env
-
+docker-compose.proxy.yml
 .env
+.claude/
+

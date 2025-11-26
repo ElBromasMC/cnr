@@ -6,17 +6,17 @@ import { Organization } from "../models/Organization.js";
 import { AsyncIO, Maybe, MaybeA, ListM } from "../helpers/AsyncIO.js";
 
 // Menus
-// Get menus
+// Get menus by month and year
 /*
-const getMenus = async (req, res) => {
+const getMenusByMonth = async (req, res) => {
     const { month, year } = req.params;
     let menu;
     try{
         menu = await Menu.findAll({
             where: {
-                [Op.and]: [
-                    {date: db.where(db.fn('YEAR', db.col('date')), year)},
-                    {date: db.where(db.fn('MONTH', db.col('date')), month)}
+                [Sequelize.Op.and]: [
+                    Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('YEAR FROM "menu"."date"')), year),
+                    Sequelize.where(Sequelize.fn('EXTRACT', Sequelize.literal('MONTH FROM "menu"."date"')), month)
                 ]
             },
             include: [
