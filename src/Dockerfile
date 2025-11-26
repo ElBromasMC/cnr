@@ -26,9 +26,9 @@ WORKDIR /home/runner/src
 COPY --chown=runner:runner frontend/package.json frontend/package-lock.json ./frontend/
 COPY --chown=runner:runner webserver/package.json webserver/package-lock.json ./webserver/
 RUN cd /home/runner/src/frontend \
-    && npm ci --omit=dev \
+    && npm ci \
     && cd /home/runner/src/webserver \
-    && npm ci --omit=dev
+    && npm ci
 
 #
 # Production
@@ -86,10 +86,6 @@ USER runner
 WORKDIR /home/runner/src
 
 # Install dev-time project dependencies
-RUN cd /home/runner/src/frontend \
-    && npm ci \
-    && cd /home/runner/src/webserver \
-    && npm ci
 
 # Move temporally project dependencies and clean source directory
 RUN mv ./frontend/node_modules /var/tmp/deps/node_modules_frontend \
