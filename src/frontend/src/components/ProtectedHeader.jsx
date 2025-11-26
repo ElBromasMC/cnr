@@ -35,7 +35,7 @@ const ProtectedHeader = () => {
             <nav>
                 <div className="logo">
                     <Link className="center" to="/app/admin">
-                        <img src="/menu/images/logo-1.png" alt="Centro Nutricional Rodriguez" style={{ width: '200px', }} />
+                        <img src="/menu/images/logo-1.png" alt="Grupo Nativas" style={{ width: '200px', }} />
                     </Link>
                 </div>
                 <div className="user">

@@ -55,9 +55,9 @@ const PublicFooter = () => {
             </div>
             <div className="foot">
                 <div>
-                    <img src="/menu/images/logo-2.png" alt="Centro Nutricional Rodríguez" style={{ width: '8.5rem' }} />
+                    <img src="/menu/images/logo-2.png" alt="Grupo Nativas" style={{ width: '8.5rem' }} />
                 </div>
-                <a href="#">© Copyright 2024</a>
+                <a href="#">© Copyright 2025</a>
                 <a href="#">Aviso Legal</a>
                 <a href="#">Política de privacidad</a>
                 <a href="#">Política de cookies</a>
